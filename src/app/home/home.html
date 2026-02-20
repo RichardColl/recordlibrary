@@ -4,7 +4,7 @@
 @if (artist.monoStatus() === ServiceStateEnum.IN_PROGRESS) {
    <div>
     <div class="loader"></div>
-	if in progress display here
+	
   </div>
 }
 
@@ -15,10 +15,11 @@
     <div fxLayout="row" fxLayoutGap="10">
       <div fxFlex="20%">
         <img
-          [src]="'https://indiansummerrecordsserver.herokuapp.com/images/' "
-          width="5%"
-          height="5%"
-        />
+  [src]="'https://indiansummerrecordsserver.herokuapp.com/images/' +
+         mono.theartistsmono[0]?.menuimage"
+  width="5%"
+  height="5%"
+/>
 		if success display here
       </div>
 
