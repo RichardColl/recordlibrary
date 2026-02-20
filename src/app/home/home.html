@@ -1,0 +1,33 @@
+<p>home works!</p>
+
+
+@if (artist.monoStatus() === ServiceStateEnum.IN_PROGRESS) {
+   <div>
+    <div class="loader"></div>
+	if in progress display here
+  </div>
+}
+
+@if (artist.monoStatus() === ServiceStateEnum.SUCCESS) {
+
+  @if (artist.monoArtist(); as mono) {
+
+    <div fxLayout="row" fxLayoutGap="10">
+      <div fxFlex="20%">
+        <img
+          [src]="'https://indiansummerrecordsserver.herokuapp.com/images/' "
+          width="5%"
+          height="5%"
+        />
+		if success display here
+      </div>
+
+      <div fxFlex="80%">
+        
+        <p>first call here to getMonoArtistByID</p>
+      </div>
+    </div>
+
+  }
+
+}
