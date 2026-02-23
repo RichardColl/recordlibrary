@@ -1,7 +1,7 @@
 import { Injectable, signal, computed } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ServiceState } from './main-api.service';
-import { ArtistMonoCollection, ArtistComboCollection } from './artist.abstract.service';
+import { ArtistMonoData, ArtistComboCollection } from './artist.abstract.service';
 
 @Injectable({ providedIn: 'root' })
 export class Artist {
@@ -12,7 +12,7 @@ export class Artist {
   // ===== STATE SIGNALS =====
 
   private monoState = signal<ServiceState>(ServiceState.INITIAL);
-  private monoData = signal<ArtistMonoCollection | null>(null);
+  private monoData = signal<ArtistMonoData | null>(null);
 
   private comboState = signal<ServiceState>(ServiceState.INITIAL);
   private comboData = signal<ArtistComboCollection | null>(null);
@@ -34,7 +34,7 @@ export class Artist {
     this.monoState.set(ServiceState.IN_PROGRESS);
 
     this.http
-      .get<ArtistMonoCollection>(`${this.API}/monoFindByArtistId/?ID=${id}`)
+      .get<ArtistMonoData>(`${this.API}/monoFindByArtistId/?ID=${id}`)
       .subscribe({
         next: data => {
           this.monoData.set(data);
