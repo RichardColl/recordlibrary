@@ -49,7 +49,22 @@
 
     <p>secound call here to getComboMonoArtistByID where we get 2 artists back and we 
       aggregate results into a 3rd object using java reactive library </p>
-    <h3>{{ combo.name }}</h3>
+    <div fxLayout="row" fxLayoutGap="10">
+      <div fxFlex="20%">
+        <img
+  [src]="'https://indiansummerrecordsserver.herokuapp.com/images/' +
+         combo.menuimage"
+  width="5%"
+  height="5%"
+/>
+		
+      </div>
+
+      <div fxFlex="80%">
+        <h3>{{ combo.name }}</h3>
+        <p>{{ combo.history }}</p>
+      </div>
+    </div>
     
     
     <div fxLayout="row" fxLayoutGap="10">
