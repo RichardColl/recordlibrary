@@ -1,4 +1,4 @@
-<p>home works!</p>
+
 
 
 @if (artist.monoStatus() === ServiceStateEnum.IN_PROGRESS) {
@@ -9,7 +9,7 @@
 }
 
 
-
+@if (artist.monoStatus() === ServiceStateEnum.SUCCESS) {
   @if (artist.monoArtist(); as mono) {
 
     <div fxLayout="row" fxLayoutGap="10">
@@ -20,7 +20,7 @@
   width="5%"
   height="5%"
 />
-		if success display here
+		
       </div>
 
       <div fxFlex="80%">
@@ -30,5 +30,5 @@
     </div>
 
   }
-
+}
 
