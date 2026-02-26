@@ -1,5 +1,8 @@
 
-
+<h1>These two calls are the same as the two calls in the main  page except
+  we are hitting a different app on Angular v21 and the calls are using Signals instead
+  of RXJS BehaviourSubjects for state management. 
+</h1>
 
 @if (artist.monoStatus() === ServiceStateEnum.IN_PROGRESS) {
    <div>
@@ -31,4 +34,42 @@
 
   }
 }
+
+
+@if (artist.comboStatus() === ServiceStateEnum.IN_PROGRESS) {
+   <div>
+    <div class="loader"></div>
+	
+  </div>
+}
+
+
+@if (artist.comboStatus() === ServiceStateEnum.SUCCESS) {
+  @if (artist.comboArtist(); as combo) {
+
+    <p>secound call here to getComboMonoArtistByID where we get 2 artists back and we 
+      aggregate results into a 3rd object using java reactive library </p>
+    <h3>{{ combo.name }}</h3>
+    
+    
+    <div fxLayout="row" fxLayoutGap="10">
+      <div fxFlex="20%">
+        <img
+  [src]="'https://indiansummerrecordsserver.herokuapp.com/images/' +
+         combo.relatedMenuimage"
+  width="5%"
+  height="5%"
+/>
+		
+      </div>
+
+      <div fxFlex="80%">
+        <h3>{{ combo.relatedName }}</h3>
+        <p>{{ combo.relatedHistory }}</p>
+      </div>
+    </div>
+
+  }
+}
+
 
