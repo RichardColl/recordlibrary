@@ -1,0 +1,16 @@
+<h1>Track combined with Artist</h1>
+
+<div *ngIf="viewModel$ | async as vm">
+
+  <h2>{{ vm.title }}</h2>
+  <p>Track #: {{ vm.trackno }}</p>
+  <p>Length: {{ vm.length }}</p>
+
+  <hr>
+
+  <h3>{{ vm.name }}</h3>
+  <img [src]="vm.menuimage" width="200" />
+  <p>{{ vm.history }}</p>
+
+
+</div>

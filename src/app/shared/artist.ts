@@ -9,7 +9,7 @@ export class Artist {
 	
 	private API = '//indiansummerrecordsserver.herokuapp.com';
 
-  // ===== STATE SIGNALS =====
+  // ===== STATE SIGNALS  =====
 
   private monoState = signal<ServiceState>(ServiceState.INITIAL);
   private monoData = signal<ArtistMonoData | null>(null);

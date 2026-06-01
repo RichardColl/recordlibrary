@@ -40,11 +40,8 @@ export interface ArtistMonoCollection {
 
 
 export interface ArtistServiceData {
-
-    artistServiceState: ServiceState;
-    artistDetails: ArtistCollection;
-    artistComboDetails:ArtistComboCollection;
-    artistMonoDetails:ArtistMonoCollection;
-
-
+  artistServiceState: ServiceState;
+  artistDetails: ArtistCollection | null;
+  artistComboDetails: ArtistComboCollection | null;
+  artistMonoDetails: ArtistMonoCollection | null;
 }
