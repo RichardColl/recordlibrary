@@ -125,6 +125,8 @@ export class ArtistService {
 
   getMonoArtistByID(): void {
 
+    
+
     this._artistserviceDataMono$.next({
       ...this._artistserviceDataMono$.value,
       artistServiceState: ServiceState.IN_PROGRESS

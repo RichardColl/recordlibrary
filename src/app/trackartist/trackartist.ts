@@ -62,6 +62,8 @@ constructor(
   ngOnInit(): void {
     this.trackService.getTrackByID('693d6f4f2aef37d30df1421a');
     this.artistService.getMonoArtistByID();
+    
+
   }
 
 

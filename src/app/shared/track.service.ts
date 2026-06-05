@@ -29,14 +29,14 @@ export class TrackService {
 
   constructor(private http: HttpClient) {}
 
-  getTrackByID(id: string): Observable<TrackCollection | null> {
+  getTrackByID(id: string): void {
 
     this._trackserviceData$.next({
       ...this._trackserviceData$.value,
       trackServiceState: ServiceState.IN_PROGRESS
     });
 
-   return this.http
+   this.http
      .get<TrackCollection>(`${this.TRACK_API}/${id}`, httpOptions)
      .pipe(
        tap(data => {
@@ -53,7 +53,8 @@ export class TrackService {
          });
          return of(null);
        })
-     );
+     )
+     .subscribe();
     
 
   }
